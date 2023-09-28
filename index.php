@@ -37,7 +37,7 @@
         jQuery('#msg').html('Please wait...');
         jQuery('#btnSubmit').attr('disabled', true);
         jQuery.ajax({
-            url: 'https://script.google.com/macros/s/AKfycbz7Ngeaorh7FXluqbl57f7tuzjyQZmC3earP7P03-QefwTDS0fNrRbXcReVONoMMjJ9hw/exec',
+            url: 'https://script.google.com/macros/s/AKfycbwS1e5fe4O17OOBQ-W-1VWHw1qHMAAGOT1IFtXdUdtEc7Y1NMWIRqZ8Va9uq5OQBCRn/exec',
 
             type: 'post',
             data: jQuery('#frmSubmit').serialize(),
