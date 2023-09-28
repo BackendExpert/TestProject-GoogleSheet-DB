@@ -29,3 +29,46 @@
         </div>
     </div>
 </div>
+
+<script>
+
+    jQuery('#frmSubmit').on('submit', function(e) {
+        e.preventDefault();
+        jQuery('#msg').html('Please wait...');
+        jQuery('#btnSubmit').attr('disabled', true);
+        jQuery.ajax({
+            url: 'https://script.google.com/macros/s/AKfycbz7Ngeaorh7FXluqbl57f7tuzjyQZmC3earP7P03-QefwTDS0fNrRbXcReVONoMMjJ9hw/exec',
+
+            type: 'post',
+            data: jQuery('#frmSubmit').serialize(),
+
+            success: function(result) {
+
+                resend();
+
+            }
+        });
+    });
+
+    function resend() {
+        jQuery.ajax({
+            url: 'process.php',
+            type: 'post',
+
+            data: jQuery('#frmSubmit').serialize(),
+            success: function(result) {
+
+                jQuery('#frmSubmit')[0].reset();
+
+                jQuery('#msg').html(result);
+
+                jQuery('#btnSubmit').attr('disabled', false);
+
+                //window.location.href='';
+            }
+
+        });
+
+    }
+
+</script>
