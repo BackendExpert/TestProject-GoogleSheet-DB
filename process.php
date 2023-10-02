@@ -1,6 +1,6 @@
 <?php
 
-$mysqli = new mysqli("localhost", "database_name", "username", "dbpassword");
+$mysqli = new mysqli("localhost", "php_data", "root", "");
 // Check connection
 if ($mysqli->connect_errno) {
     echo "Failed to connect to MySQL: " . $mysqli->connect_error;
@@ -14,7 +14,7 @@ if ($mysqli->connect_errno) {
         $msg = htmlspecialchars(trim($_POST['message']));
     }
 
-    $sql = "INSERT INTO contact(name,email,mobile,message) VALUES ('" . addslashes($name) . "', '" . addslashes($email) . "','" . addslashes($mobile) . "', '" . addslashes($msg) . "')";
+    $sql = "INSERT INTO user_tbl(name,email,mobile,message) VALUES ('" . addslashes($name) . "', '" . addslashes($email) . "','" . addslashes($mobile) . "', '" . addslashes($msg) . "')";
 
     if (mysqli_query($mysqli, $sql)) {
 
